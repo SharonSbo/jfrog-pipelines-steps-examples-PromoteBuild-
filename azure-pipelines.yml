@@ -21,12 +21,16 @@ stages:
       vmImage: ubuntu-latest
     steps:
 
-- task: ArtifactoryBuildPromotion@1
-  inputs:
-    artifactoryService: 'Artifactory'
-    buildName: '1'
-    buildNumber: '$(Build.BuildNumber)'
-    status: 'Released'
-    includeDependencies: false
-    copy: true
-    dryRun: false
+
+    - task: ArtifactoryBuildPromotion@1
+      inputs:
+        artifactoryService: 'Artifactory'
+        buildName: '$(Build.DefinitionName)'
+        buildNumber: '1'
+        targetRepo: 'resolve_to'
+        status: 'Released'
+        comment: 'yeah'
+        sourceRepo: 'Buildtest'
+        includeDependencies: false
+        copy: true
+        dryRun: false
