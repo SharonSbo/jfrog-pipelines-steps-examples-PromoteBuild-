@@ -27,12 +27,12 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/DockerBuild/Dockerfile'
         tags: |
           $(tag)
+
 - task: ArtifactoryBuildPromotion@1
   inputs:
     artifactoryService: 'Artifactory'
-    buildName: '$(Build.DefinitionName)'
+    buildName: '1'
     buildNumber: '$(Build.BuildNumber)'
-    targetRepo: 'arielk-docker'
     status: 'Released'
     includeDependencies: false
     copy: true
