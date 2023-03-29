@@ -25,7 +25,7 @@ stages:
     - task: ArtifactoryBuildPromotion@1
       inputs:
         artifactoryService: 'Artifactory'
-        buildName: '$(Build.DefinitionName)'
+        buildName: 'example-build'
         buildNumber: '1'
         targetRepo: 'resolve_to'
         status: 'Released'
