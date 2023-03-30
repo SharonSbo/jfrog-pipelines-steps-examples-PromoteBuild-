@@ -25,12 +25,12 @@ stages:
     - task: ArtifactoryBuildPromotion@1
       inputs:
         artifactoryService: 'Artifactory'
-        buildName: 'example-build'
+        buildName: 'test'
         buildNumber: '1'
         targetRepo: 'resolve_to'
         status: 'Released'
         comment: 'yeah'
-        sourceRepo: 'Buildtest'
+        sourceRepo: 'default-docker-local'
         includeDependencies: false
         copy: true
         dryRun: false
