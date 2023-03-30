@@ -31,6 +31,6 @@ stages:
         status: 'Released'
         comment: 'yeah'
         sourceRepo: 'default-docker-local'
-        includeDependencies: false
+        includeDependencies: true
         copy: true
         dryRun: false
