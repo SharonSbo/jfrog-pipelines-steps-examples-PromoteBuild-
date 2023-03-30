@@ -22,14 +22,15 @@ stages:
     steps:
 
 
-- task: ArtifactoryBuildPromotion@1
-  inputs:
-    artifactoryService: 'Artifactory'
-    buildName: 'test'
-    buildNumber: '1'
-    targetRepo: 'resolve_to'
-    status: 'Released'
-    sourceRepo: 'default-docker-local'
-    includeDependencies: false
-    copy: true
-    dryRun: false
+    - task: ArtifactoryBuildPromotion@1
+      inputs:
+        artifactoryService: 'Artifactory'
+        buildName: 'test'
+        buildNumber: '1'
+        targetRepo: 'resolve_to'
+        status: 'Released'
+        comment: 'yeah'
+        sourceRepo: 'default-docker-local'
+        includeDependencies: true
+        copy: true
+        dryRun: false
